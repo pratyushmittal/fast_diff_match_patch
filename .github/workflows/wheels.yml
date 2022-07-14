@@ -56,7 +56,8 @@ jobs:
           twine check dist/*.tar.gz
 
       - name: Test source distribution
-        run: pip install ./dist/*.tar.gz
+        run: |
+          pip install ./dist/*.tar.gz
           python -c "from fast_diff_match_patch import diff"
 
       - uses: actions/upload-artifact@v2
